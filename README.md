@@ -107,13 +107,13 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | How can we represent the system in an **architecture diagram**, which gives information both about the Docker containers, the communication protocols and the commands? |
 | | *Insert your diagram here...* |
 |Question | Who is going to **send UDP datagrams** and **when**? |
-| | *Enter your response here...* |
+| | The Musicians, every second |
 |Question | Who is going to **listen for UDP datagrams** and what should happen when a datagram is received? |
-| | *Enter your response here...* |
+| | The Auditor, it should keep track of the Musicians, if they emit for at least 5 seconds these are considered to be active |
 |Question | What **payload** should we put in the UDP datagrams? |
-| | *Enter your response here...* |
+| | The uuid of the Musician and the type of instrument it plays |
 |Question | What **data structures** do we need in the UDP sender and receiver? When will we update these data structures? When will we query these data structures? |
-| | *Enter your response here...* |
+| | On the Auditor side : An array of emitting Musicians and an array of active Musicians. On the Musician side: it's uuid and it's instrument. The array of active Musicians is queried through TCP connection to the Auditor and send as a JSON |
 
 
 ## Task 2: implement a "musician" Node.js application
@@ -121,15 +121,15 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic
 | ---  | ---
 |Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**?
-| | *Enter your response here...*
+| |var json_data = JSON.stringify(obj);
 |Question | What is **npm**?
-| | *Enter your response here...*
+| | npm is a package manager for JavaScript, it allows the use of code shared from other users like a library
 |Question | What is the `npm install` command and what is the purpose of the `--save` flag?
-| | *Enter your response here...*
+| | This command installs a package, and any packages that it depends on, with the --save flag package will appear in your dependencies.
 |Question | How can we use the `https://www.npmjs.com/` web site?
-| | *Enter your response here...*
+| | We can use it to easily find packages that we need to build our new application
 |Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122?
-| | *Enter your response here...*
+| | https://www.npmjs.com/package/uuid
 |Question | In Node.js, how can we execute a function on a **periodic** basis?
 | | *Enter your response here...*
 |Question | In Node.js, how can we **emit UDP datagrams**?

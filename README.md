@@ -177,7 +177,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic
 | ---  | ---
 |Question | How do we validate that the whole system works, once we have built our Docker image?
-| | *Enter your response here...*
+| | We used the validate.sh script to build an run a few musicians and an auditor an then connected to the auditor with telnet to retrieve the JSON of active players, then checked if after killing the musicians and waiting 5 seconds the returned JSON was empty
 
 
 ## Constraints

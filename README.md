@@ -131,11 +131,11 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122?
 | | https://www.npmjs.com/package/uuid
 |Question | In Node.js, how can we execute a function on a **periodic** basis?
-| | *Enter your response here...*
+| |setInterval(this.update.bind(this), EMISSION_INTERVAL);
 |Question | In Node.js, how can we **emit UDP datagrams**?
-| | *Enter your response here...*
+| | with a datgram socket from the dgram package
 |Question | In Node.js, how can we **access the command line arguments**?
-| | *Enter your response here...*
+| | process.argv[place_of_argument]
 
 
 ## Task 3: package the "musician" app in a Docker image
@@ -143,17 +143,17 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic
 | ---  | ---
 |Question | How do we **define and build our own Docker image**?
-| | *Enter your response here...*
+| | We define the specs of the container in a Dockerfile from which the image is built
 |Question | How can we use the `ENTRYPOINT` statement in our Dockerfile?
-| | *Enter your response here...*
+| | we can use it to run our node application, like if we were typing the command to run it
 |Question | After building our Docker image, how do we use it to **run containers**?
-| | *Enter your response here...*
+| | docker run name_of_image
 |Question | How do we get the list of all **running containers**?
-| | *Enter your response here...*
+| | docker ps
 |Question | How do we **stop/kill** one running container?
-| | *Enter your response here...*
+| | docker kill name_of_container
 |Question | How can we check that our running containers are effectively sending UDP datagrams?
-| | *Enter your response here...*
+| | with tcpdump
 
 
 ## Task 4: implement an "auditor" Node.js application
@@ -161,15 +161,15 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic
 | ---  | ---
 |Question | With Node.js, how can we listen for UDP datagrams in a multicast group?
-| | *Enter your response here...*
+| | socket.addMembership(Multicast_address)
 |Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**? 
 | | *Enter your response here...*
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting? 
 | | *Enter your response here...*
 |Question | When and how do we **get rid of inactive players**? 
-| | *Enter your response here...*
+| | when we connect to the auditor to retrieve the active player, we remove as well the players with a timestamp older than 5 seconds
 |Question | How do I implement a **simple TCP server** in Node.js? 
-| | *Enter your response here...*
+| | var server = net.createServer((client) => { // Place server code here });*
 
 
 ## Task 5: package the "auditor" app in a Docker image

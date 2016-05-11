@@ -38,11 +38,11 @@ docker build --tag res/validate-music --file ./docker/image-validation/Dockerfil
 # a npm package to control Docker. It will start/stop musician and auditor containers and check that
 # the auditor works as expected.
 #
-
 echo ""
 echo ""
 echo "*** Starting validation..."
 echo ""
 git remote -v | tee check.log
 docker run --name res_validation -v /var/run/docker.sock:/var/run/docker.sock res/validate-music | tee -a check.log
+
 

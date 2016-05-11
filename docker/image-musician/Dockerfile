@@ -1,9 +1,11 @@
 FROM node:4.3.1
 MAINTAINER Ciani Antony <antony.ciani@heig-vd.ch>
 
-#
-# When we build the image, we copy the executable jar in the image file system. 
-#
 COPY musician.js /opt/app/
+
+RUN npm install uuid
+RUN npm install hashmap
+
+
 
 ENTRYPOINT ["node", "/opt/app/musician.js"]
